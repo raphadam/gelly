@@ -40,7 +40,7 @@ type RoomBlueprint interface {
 	Init(r *Room)
 	Join(r *Room, conn *Conn)
 	Message(r *Room, conn *Conn, msg Message)
-	Update(r *Room, dt time.Duration)
+	Tick(r *Room, dt time.Duration)
 	Left(r *Room, conn *Conn)
 	Dispose(r *Room)
 }
@@ -152,7 +152,7 @@ func (r *Room) serve() {
 			select {
 			case <-tick.C:
 				// TODO: pass the good delta time
-				r.rb.Update(r, time.Millisecond*20)
+				r.rb.Tick(r, time.Millisecond*20)
 
 			// TODO: maybe check if already connected
 			case conn := <-r.joinc:

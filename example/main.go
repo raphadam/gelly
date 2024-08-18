@@ -19,25 +19,25 @@ import (
 	"golang.org/x/image/font/gofont/goregular"
 )
 
-var GameScene = gelly.Scene{
-	Name:   "main",
-	Layers: []gelly.Layer{&GameUI{}, &Game{}},
-}
-
-// var IntroScene = gelly.Scene{
-// 	Name:   "intro",
-// 	Layers: []gelly.Layer{&Intro{}},
+// var GameScene = gelly.Scene{
+// 	Name:   "main",
+// 	Layers: []gelly.Layer{&GameUI{}, &Game{}},
 // }
 
-// var PrensentationScene = gelly.Scene{
-// 	Name:   "Prensentation",
-// 	Layers: []gelly.Layer{&Prensentation{}},
-// }
+// // var IntroScene = gelly.Scene{
+// // 	Name:   "intro",
+// // 	Layers: []gelly.Layer{&Intro{}},
+// // }
 
-func main() {
-	err := gelly.Run(GameScene)
-	log.Fatal("client closed", err)
-}
+// // var PrensentationScene = gelly.Scene{
+// // 	Name:   "Prensentation",
+// // 	Layers: []gelly.Layer{&Prensentation{}},
+// // }
+
+// func main() {
+// 	err := gelly.Run(GameScene)
+// 	log.Fatal("client closed", err)
+// }
 
 type DialogBox struct {
 	dur         time.Duration
